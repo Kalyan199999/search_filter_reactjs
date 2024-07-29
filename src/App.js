@@ -1,23 +1,48 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+import {useState} from 'react';
+
 function App() {
+
+  const searchitem = ['pavan','kalyan','uma','divya','kavya','ravi' , 'pavan kalyan','akash','tarun','kiran','pavan kumar','ravi kiran' , 'leela'] ;
+
+  const [s , updates] = useState('')
+
+   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+
+      <div className='search'>
+
+        <input type='text' placeholder='search here......' value={s}  onChange={(e)=>{
+          updates(e.target.value)
+          }} />
+
+      </div>
+
+      <div className='items'>
+      {
+        
+        searchitem.filter((val)=>{ 
+    
+          if(s === '')
+          {
+            return val;
+          }
+          else if(val.toLocaleLowerCase().includes(s.toLocaleLowerCase()))
+          {
+            return val;
+          }
+          else{
+            return '';
+          }
+          
+        }).sort().map((val , idx)=>{return <h1>{val.toUpperCase()}</h1>
+        })
+      }
+      </div>
+
     </div>
   );
 }
