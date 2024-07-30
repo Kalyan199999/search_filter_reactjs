@@ -1,0 +1,28 @@
+{
+    "users":[
+        {
+            "id":1,
+            "name":"kalyan",
+            "image":"/20230412_163627.jpg",
+            "role":"Developer"
+        },
+        {
+            "id":2,
+            "name":"pavan",
+            "image":"/DSC_2732.JPG",
+            "role":"team lead"
+        },
+        {
+            "id":3,
+            "name":"kiran",
+            "image":"/20230412_163627.jpg",
+            "role":"Ceo"
+        },
+        {
+            "id":4,
+            "name":"arun",
+            "image":"/DSC_2732.JPG",
+            "role":"Developer"
+        }
+    ]
+}
